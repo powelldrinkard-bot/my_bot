@@ -40,6 +40,12 @@
             </geometry>
             <material name="white"/>
         </visual>
+        <collision
+            <origin xyz="0.15 0 0.075"/>
+            <geometry>
+                <box size ="0.3 0.3 0.15"/>
+            </geometry>
+        </collision>
     </link>
 
 
@@ -60,6 +66,11 @@
         </geometry>
         <material name="blue"/>
     </visual>
+    <collisoin>
+        <geometry>
+            <cylinder radius="0.05" length="0.04"/>
+        </geometry>
+    </collision>
 </link>
 
 
@@ -80,6 +91,11 @@
         </geometry>
         <material name="blue"/>
     </visual>
+    <collision>
+        <geometry>
+            <cylinder radius="0.05" length="0.04"/>
+        </geometry>
+    </collision>
 </link>
 
 
@@ -99,5 +115,10 @@
             </geometry>
             <material name="black"/>
         </visual>
+        <collision>
+            <geometry>
+                <sphere radius="0.05"/>
+            </geometry>
+        </collision>
     </link>
 </robot>
