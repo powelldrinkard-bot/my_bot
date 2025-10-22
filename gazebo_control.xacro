@@ -1,29 +1,30 @@
 <?xml version="1.0"?>
-<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+<sdf version="1.9">
+  <model name="my_bot">
+    <link name="base_link">
+      <!-- Your robot’s physical and visual parts here -->
+    </link>
 
-    <gazebo>
-        <plugin name="diff_drive" filename="libgz-sim-diff-drive-system.so">
+    <!-- Diff Drive plugin (Gazebo Ionic style) -->
+    <plugin
+      name="gz_diff_drive"
+      filename="libgz-sim-diff-drive-system.so">
 
-        <!--wHEEL INFO-->   
-        <left_joint>left_wheel_joint</left_joint>
-        <right_joint>right_wheel_joint</right_joint>
-        <wheel_seperation>0.35</wheel_seperation>
-        <wheel_diameter>0.1</wheel_diameter>
+      <left_joint>left_wheel_joint</left_joint>
+      <right_joint>right_wheel_joint</right_joint>
+      <wheel_separation>0.35</wheel_separation>
+      <wheel_radius>0.05</wheel_radius>
 
+      <odom_topic>/odom</odom_topic>
+      <cmd_vel_topic>/cmd_vel</cmd_vel_topic>
+      <odometry_frame>odom</odometry_frame>
+      <robot_base_frame>base_link</robot_base_frame>
 
-        <!-- Limits -->
-        <max_wheel_tourque>200</max_wheel_tourque>
-        <max_wheel_acceleration>10.0</max_wheel_acceleration>
+      <max_linear_acceleration>10.0</max_linear_acceleration>
+      <max_angular_acceleration>10.0</max_angular_acceleration>
 
-        <!-- Output -->
-        <odometry_frame>odom</odometry_frame>
-        <robot_base_frame>base_link</robot_base_frame>
-
-        <publish_odom>true</publish_odom>
-        <publish_odom_tf>true</publish_odom_tf>
-        <publish_wheel_tf>true</publish_wheel_tf>
-
-        </plugin>
-    </gazebo>
-    
-</robot>
+      <publish_odom>true</publish_odom>
+      <publish_tf>true</publish_tf>
+    </plugin>
+  </model>
+</sdf>
