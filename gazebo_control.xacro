@@ -1,19 +1,13 @@
 <?xml version="1.0"?>
 <sdf version="1.9">
   <model name="my_bot">
-    <link name="base_link">
-      <!-- Your robot’s physical and visual parts here -->
-    </link>
 
-    <!-- Diff Drive plugin (Gazebo Ionic style) -->
-    <plugin
-      name="gz_diff_drive"
-      filename="libgz-sim-diff-drive-system.so">
-
+    <!-- Diff drive plugin for Gazebo Ionic -->
+    <plugin name="gz_diff_drive" filename="libgz-sim-diff-drive-system.so">
       <left_joint>left_wheel_joint</left_joint>
       <right_joint>right_wheel_joint</right_joint>
       <wheel_separation>0.35</wheel_separation>
-      <wheel_radius>0.05</wheel_radius>
+      <wheel_radius>0.05</wheel_radius>   <!-- half the diameter -->
 
       <odom_topic>/odom</odom_topic>
       <cmd_vel_topic>/cmd_vel</cmd_vel_topic>
@@ -26,5 +20,6 @@
       <publish_odom>true</publish_odom>
       <publish_tf>true</publish_tf>
     </plugin>
+
   </model>
 </sdf>
