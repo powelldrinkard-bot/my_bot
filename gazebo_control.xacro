@@ -21,5 +21,12 @@
       <publish_tf>true</publish_tf>
     </plugin>
 
+<gazebo>
+  <plugin name="ros2_control" filename="libgazebo_ros2_control.so">
+    <robotNamespace>/</robotNamespace>
+  </plugin>
+</gazebo>
+
+
   </model>
 </sdf>
